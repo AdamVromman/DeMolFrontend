@@ -1,0 +1,3 @@
+<img style="background-color: black;" src="assets/molLogo.jpg">
+<h1>{{Spel.Jaar}}: Week {{Spel.Week}}</h1>
+<app-mol-speler style="float: left; margin: 5px;" [molSpeler]="speler" *ngFor="let speler of (Spelers | async)"></app-mol-speler>

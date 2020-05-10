@@ -1,0 +1,12 @@
+<mat-card style=" background-color: #000b0a;">
+    <mat-card-title>{{molSpeler.Voornaam}}</mat-card-title>
+    <mat-card-subtitle id="subtitle{{molSpeler.Voornaam}}">{{Geelimineerd}}</mat-card-subtitle>
+    <mat-card-content>
+        <img mat-card-image src="assets/s08/{{molSpeler.Voornaam}}.webp">
+                <div style="font-size: 0.7em;" mat-line>{{molSpeler.AantalStemmenMol}}</div>
+                <div style="font-size: 0.7em;" mat-line>Mensen die denken dat {{molSpeler.Voornaam}} de mol is.</div>
+           
+                <div style="font-size: 0.7em;" mat-line>{{molSpeler.AantalStemmenEliminatie}}</div>
+                <div style="font-size: 0.7em;" mat-line>Mensen die denken dat {{molSpeler.Voornaam}} deze week geelimineerd is.</div>
+    </mat-card-content>
+</mat-card>
