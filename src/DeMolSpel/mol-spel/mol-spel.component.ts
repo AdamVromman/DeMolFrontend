@@ -42,4 +42,11 @@ export class MolSpelComponent implements OnInit {
     return this.molSpel;
   }
 
+  public volgendeWeek()
+  {
+    console.log("hier");
+    this.molSpel.weekPlusEen();
+    this._molSpelData.weekPlusEen(this.molSpel);
+  }
+
 }

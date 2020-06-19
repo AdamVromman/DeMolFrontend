@@ -8,9 +8,9 @@ interface molSpelJSON
 export class MolSpel
 {
     constructor(
-        private _id: number,
-        private _jaar: number,
-        private _week: number
+        private id: number,
+        private jaar: number,
+        private week: number
     ){}
 
     public static fromJson(json: molSpelJSON): MolSpel
@@ -20,16 +20,21 @@ export class MolSpel
     
     public get Id(): number
     {
-        return this._id;
+        return this.id;
     }
 
     public get Jaar(): number
     {
-        return this._jaar;
+        return this.jaar;
     }
 
     public get Week(): number
     {
-        return this._week;
+        return this.week;
+    }
+
+    public weekPlusEen()
+    {
+        this.week++;
     }
 }
