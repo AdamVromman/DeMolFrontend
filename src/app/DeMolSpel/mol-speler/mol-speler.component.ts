@@ -23,20 +23,22 @@ export class MolSpelerComponent implements OnInit {
     console.log(this.molSpeler.Mol);
     if (this.molSpeler.Mol)
     {
-      return "MOL";
+      document.getElementById(`subtitle${this.molSpeler.Voornaam}`).style.color = "green";
+      return "fingerprint";
     }
     if (this.molSpeler.Winnaar)
     {
-      return "WINNAAR";
+      document.getElementById(`subtitle${this.molSpeler.Voornaam}`).style.color = "green";
+      return "emoji_events";
     }
      if(this.molSpeler.EliminatieWeek == -1)
      {
       document.getElementById(`subtitle${this.molSpeler.Voornaam}`).style.color = "green";
-       return "niet geelimineerd";
+       return "check";
      }
      else{
       document.getElementById(`subtitle${this.molSpeler.Voornaam}`).style.color = "red";
-       return "geelimineerd";
+       return "close";
      }
   }
 

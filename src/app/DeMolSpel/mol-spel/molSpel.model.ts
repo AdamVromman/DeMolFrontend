@@ -32,9 +32,4 @@ export class MolSpel
     {
         return this.week;
     }
-
-    public weekPlusEen()
-    {
-        this.week++;
-    }
 }

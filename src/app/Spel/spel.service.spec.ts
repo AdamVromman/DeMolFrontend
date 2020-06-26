@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MolSpelerDataService } from './mol-speler-data.service';
+import { SpelService } from './spel.service';
 
-describe('MolSpelerDataService', () => {
-  let service: MolSpelerDataService;
+describe('SpelService', () => {
+  let service: SpelService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MolSpelerDataService);
+    service = TestBed.inject(SpelService);
   });
 
   it('should be created', () => {

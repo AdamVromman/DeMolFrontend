@@ -1,0 +1,7 @@
+<div *ngIf="Spel != null">
+    <h1>{{Spel.Jaar}}: Week {{Spel.Week}}</h1>
+    <div style="overflow-x: scroll;display: flex; flex-direction: row;">
+        <app-mol-speler style="float: left; margin: 5px;" [molSpeler]="speler" *ngFor="let speler of (Spelers | async)"></app-mol-speler>
+    </div>
+</div>
+

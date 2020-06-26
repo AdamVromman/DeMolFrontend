@@ -1,0 +1,8 @@
+<form [formGroup]="elimineer" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <select aria-label="molSpeler" aria-placeholder="kies een molSpeler" formControlName="molSpeler" class="form-control" id="exampleFormControlSelect1">
+            <option [value]="molSpeler.Id" *ngFor="let molSpeler of (Spelers)">{{molSpeler.Voornaam}}</option>
+          </select>
+          <button class="btn btn-danger" type="submit">elimineer</button>
+    </div>
+</form>

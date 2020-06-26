@@ -1,0 +1,9 @@
+<mat-card style=" background-color: #000b0a; min-width: 170px;">
+    <mat-card-title>{{molSpeler.Voornaam}}</mat-card-title>
+    <mat-card-subtitle><mat-icon id="subtitle{{molSpeler.Voornaam}}">{{Geelimineerd}}</mat-icon></mat-card-subtitle>
+    <mat-card-content style="display: flex; flex-direction: column;">
+        <img mat-card-image src="assets/s08/{{molSpeler.Voornaam}}.webp">
+        <div><mat-icon>fingerprint</mat-icon> {{molSpeler.AantalStemmenMol}} <mat-icon>close</mat-icon> {{molSpeler.AantalStemmenEliminatie}}</div>
+                
+    </mat-card-content>
+</mat-card>

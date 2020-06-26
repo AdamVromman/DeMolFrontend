@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MolSpelerDataService } from '../mol-speler/mol-speler-data.service';
 import { Observable } from 'rxjs';
 import { MolSpeler } from '../mol-speler/molSpeler.model';
 import { MolSpel } from './molSpel.model';
@@ -17,7 +16,7 @@ export class MolSpelComponent implements OnInit {
   private molSpel: MolSpel;
 
   constructor(
-    private _molSpelerData: MolSpelerDataService,
+    
     private _molSpelData: MolSpelDataService
   ) 
   { 
@@ -26,7 +25,7 @@ export class MolSpelComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this._molSpelers$ = this._molSpelerData.MolSpelers$.pipe();
+    this._molSpelers$ = this._molSpelData.MolSpelers$;
     this._molSpel$ = this._molSpelData.MolSpel$.pipe();
     this._molSpelData.MolSpel$.subscribe(m => this.molSpel = m);
 
@@ -44,8 +43,6 @@ export class MolSpelComponent implements OnInit {
 
   public volgendeWeek()
   {
-    console.log("hier");
-    this.molSpel.weekPlusEen();
     this._molSpelData.weekPlusEen(this.molSpel);
   }
 
