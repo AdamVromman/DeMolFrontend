@@ -5,8 +5,8 @@ interface MolSpelerJSON
     eliminatieWeek: number;
     molSpelerSpelerIds: number[];
     geelimineerdSpelerSpelerIds: number[];
-    IsWinnaar: boolean;
-    IsMol: boolean;
+    isWinnaar: boolean;
+    isMol: boolean;
     MolSpelId: number;
 }
 
@@ -50,19 +50,19 @@ export class MolSpeler
         return this._aantalStemmenEliminatie;
     }
 
-    public get Mol(): boolean
+    public get IsMol(): boolean
     {
         return this._mol;
     }
 
-    public get Winnaar(): boolean
+    public get IsWinnaar(): boolean
     {
         return this._winnaar;
     }
 
     public static fromJson(speler: MolSpelerJSON): MolSpeler
     {
-        return new MolSpeler(speler.id, speler.voornaam, speler.eliminatieWeek, speler.molSpelerSpelerIds.length, speler.geelimineerdSpelerSpelerIds.length, speler.IsMol, speler.IsWinnaar);
+        return new MolSpeler(speler.id, speler.voornaam, speler.eliminatieWeek, speler.molSpelerSpelerIds.length, speler.geelimineerdSpelerSpelerIds.length, speler.isMol, speler.isWinnaar);
     }
 
     

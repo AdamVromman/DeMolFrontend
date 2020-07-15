@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MolSpelDataService } from '../DeMolSpel/mol-spel/mol-spel-data.service';
-import { MolSpel } from '../DeMolSpel/mol-spel/molSpel.model';
-import { MolSpeler } from '../DeMolSpel/mol-speler/molSpeler.model';
+import { MolSpelDataService } from '../deMolSpel/mol-spel/mol-spel-data.service';
+import { MolSpel } from '../deMolSpel/mol-spel/molSpel.model';
+import { MolSpeler } from '../deMolSpel/mol-speler/molSpeler.model';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { SpelService } from '../Spel/spel.service';
+import { SpelService } from '../spel/spel.service';
 
 @Component({
   selector: 'app-admin',
@@ -37,8 +37,8 @@ export class AdminComponent implements OnInit {
 
   public onSubmit()
   {
-      console.log(this.elimineer.value.molSpeler);
-      this._spelService.volgendeWeek(this.elimineer.value.molSpeler);
+      
+      this._spelService.volgendeWeek(this.elimineer.value.molSpeler).subscribe(() => this._molSpelService.reloadMolSpeler$.next(true));
   }
 
 }

@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="links">
+        <mat-card>
+            <app-mol-spel></app-mol-spel>
+        </mat-card>
+        
+    </div>
+    
+    <div class="rechts">
+        <mat-card>
+            <form [formGroup]="elimineerStem" (ngSubmit)="onElimineerSubmit()">
+                <div>
+                    <mat-form-field>
+                        <mat-select placeholder="kies een geelimineerde"  formControlName="geelimineerdeSpeler">
+                            <mat-option [value]="molSpeler.Id" *ngFor="let molSpeler of (Spelers)">{{molSpeler.Voornaam}}</mat-option>
+                        </mat-select>  
+                    </mat-form-field>
+                    <button class="btn btn-primary" type="submit">Stem</button>
+                </div>
+            </form>
+            <form [formGroup]="molStem" (ngSubmit)="onMolSubmit()">
+                <mat-form-field>
+                    <mat-select placeholder="kies een mol" formControlName="molSpeler">
+                        <mat-option [value]="molSpeler.Id" *ngFor="let molSpeler of Spelers">{{molSpeler.Voornaam}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button class="btn btn-primary" type="submit">Stem</button>
+            </form>
+        </mat-card>
+        <mat-card>
+            <form [formGroup]="inschrijven" (ngSubmit)="onInschrijvenSubmit()">
+                <mat-form-field>
+                    <mat-label>Inschrijven in spel</mat-label>
+                    <input type="number" formControlName="email" matInput>
+                </mat-form-field>
+                <button class="btn btn-primary" type="submit">Inschrijven</button>
+            </form>
+        </mat-card>
+    </div>
+       
+</div>

@@ -1,0 +1,29 @@
+<mat-form-field>
+    <mat-select (selectionChange)="getJaar($event)">
+        <mat-option [value]="molSpel.id" *ngFor="let molSpel of MolSpellen">
+            {{molSpel.Jaar}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div class="wrapper">
+    <div *ngIf="MolSpel != null"  class="kolom">
+        
+            <div  *ngFor="let molSpeler of MolSpelers">
+                <div *ngIf="molSpeler.EliminatieWeek != -1">
+                    <h1>{{molSpeler.EliminatieWeek}}</h1>
+                    <app-mol-speler [molSpeler]="molSpeler" ></app-mol-speler>
+                </div>
+                
+            </div>
+        
+        
+        
+    </div>
+   
+    <div></div>
+    <div class="kolom">
+    
+    </div>
+</div>
+

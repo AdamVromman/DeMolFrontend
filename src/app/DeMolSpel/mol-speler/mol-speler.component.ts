@@ -14,19 +14,19 @@ export class MolSpelerComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
+    console.log(this.molSpeler);
 
   }
 
   public get Geelimineerd(): string{
   {
-    console.log(this.molSpeler.Mol);
-    if (this.molSpeler.Mol)
+    
+    if (this.molSpeler.IsMol)
     {
       document.getElementById(`subtitle${this.molSpeler.Voornaam}`).style.color = "green";
       return "fingerprint";
     }
-    if (this.molSpeler.Winnaar)
+    if (this.molSpeler.IsWinnaar)
     {
       document.getElementById(`subtitle${this.molSpeler.Voornaam}`).style.color = "green";
       return "emoji_events";
